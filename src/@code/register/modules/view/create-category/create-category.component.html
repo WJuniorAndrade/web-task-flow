@@ -1,0 +1,22 @@
+<div class="create-category">
+    <header class="create-category__header">
+        <div class="create-category__close">
+            <span class="material-symbols-outlined" (click)="dialogRef.close()">close</span>
+        </div>
+        <h1>Cadastre sua categorias</h1>
+    </header>
+    
+    <form [formGroup]="formGroup" class="create-category__form">
+        <div class="create-category__field">
+            <mat-label>Nome da categoria</mat-label>
+            <mat-form-field appearance="outline">
+                <input matInput formControlName="title" placeholder="Digite o nome da categoria">
+            </mat-form-field>
+        </div>
+
+        <div class="create-category__actions">
+            <button mat-flat-button  (click)="dialogRef.close()">Cancelar</button>
+            <button mat-flat-button color="primary" (click)="createCategory()">Criar</button>
+        </div>
+    </form>
+</div>

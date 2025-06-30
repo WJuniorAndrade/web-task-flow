@@ -1,0 +1,66 @@
+.create-tasks {
+    display: block;
+    width: 90%;
+    margin: 3rem auto;
+   
+    @media (min-width: 800px) {
+        width: 42rem;
+    }
+
+    &__title {
+        margin: 0.6rem 0rem 2rem 0rem;
+        font-size: 1.6rem;
+    }
+
+    &__formGroup {
+        display: flex;
+        flex-direction: column;    
+        gap: 0.4rem;
+
+        @media (min-width: 800px) {
+            gap: 0.6rem;
+        }
+    }
+
+    &__grid-fields {
+        @media (min-width: 800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    &__category {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    &__register-category {
+        display: flex;
+        gap: 0.6rem;
+
+        mat-form-field {
+            width: 100%;
+        }
+        
+        button {
+            width: 70px;
+            height: 56px;
+        }
+    }
+
+    &__actions {
+        margin: 1rem 0rem;
+        button {
+            width: 100%;
+            padding: 1.4rem;
+        }
+    }
+}
