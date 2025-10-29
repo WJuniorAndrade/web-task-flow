@@ -1,0 +1,38 @@
+.create-category {
+    // width: 31rem;
+    // height: 500px;
+    padding: 1.25rem;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__close {
+        text-align: end;
+        cursor: pointer;
+    }
+
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+
+        mat-label {
+            margin-bottom: 0.5rem;
+        }
+    }    
+
+    &__actions {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.6rem;
+    }
+}

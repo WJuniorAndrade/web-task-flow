@@ -1,0 +1,19 @@
+{
+  "workbench.colorCustomizations": {
+    // Barra de título (topo)
+    "titleBar.activeBackground": "#e0439c",
+    "titleBar.activeForeground": "#FFFFFF",
+
+    "activityBar.background": "#e0439c",
+    "activityBar.foreground": "#FFFFFF",
+    "activityBar.activeBorder": "#FFFFFF",
+
+    // "sideBar.background": "#0D47A1",
+    // "sideBar.foreground": "#FFFFFF",
+
+    "statusBar.background": "#e0439c",
+    "statusBar.foreground": "#FFFFFF"
+  },
+
+  "workbench.colorTheme": "Dracula Theme"
+}

@@ -5,8 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '../@code/layout/layout.module';
 import { LayoutRoutingModule } from '../@code/layout/layout-routing.module';
-import { UiModules } from '../@code/ui/ui-modules';
+import { UiModules } from '../@code/ui/src/ui-modules';
+import { TasksModule } from '../@code/tasks/tasks.module';
+import { TasksRoutingModule } from '../@code/tasks/tasks-routing.module';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -20,8 +23,12 @@ import { UiModules } from '../@code/ui/ui-modules';
     LayoutModule,
     LayoutRoutingModule,
 
+    TasksModule,
+    TasksRoutingModule,
 
     UiModules,
+
+    BrowserAnimationsModule,
 
     HttpClientModule
   ],
