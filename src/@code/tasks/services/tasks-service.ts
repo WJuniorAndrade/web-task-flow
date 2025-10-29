@@ -12,8 +12,8 @@ export class TasksService {
 
   constructor(private http: HttpClient) {}
 
-  getDados() {
-    return this.http.get(`${this.apiUrl}/tasks`);
+  getAllTasks() {
+    return this.http.get<Response>(`${this.apiUrl}/tasks`);
   }
 
 //   createTasks(data: Tasks): Observable<ApiResponse> {

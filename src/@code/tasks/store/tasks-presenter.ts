@@ -20,6 +20,14 @@ export class TasksPresenter {
     getTask(id: string) {
         this._getTask.next(id);
     }
+
+
+    private _getAllTask = new Subject<any>();
+    public readonly getAllTask$ = this._getAllTask.asObservable();
+
+    getAllTask(data: any) {
+        this._getAllTask.next(data);
+    }
     
 
     

@@ -1,0 +1,27 @@
+<div class="code-ui-table">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let column of tableData?.columns">
+          {{ column.title | titlecase }}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let row of tableData?.tableRow">
+        <tr>
+          <ng-container *ngFor="let item of tableData?.columns">
+            <td *ngIf="!item.type">
+              {{ row[item.propertyName] }}
+            </td>
+  
+            <td *ngIf="item.type === 'date'">
+              {{ row[item.propertyName] ? (row[item.propertyName] | date:'dd/MM/yyyy') : 'Data não informada' }}
+            </td>
+        </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

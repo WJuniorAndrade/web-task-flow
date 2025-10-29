@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '../@code/layout/layout.module';
 import { LayoutRoutingModule } from '../@code/layout/layout-routing.module';
 import { UiModules } from '../@code/ui/src/ui-modules';
-import { RegisterModule } from '../@code/register/register.module';
-import { RegisterRoutingModule } from '../@code/register/register-routing.module';
+import { TasksModule } from '../@code/tasks/tasks.module';
+import { TasksRoutingModule } from '../@code/tasks/tasks-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -23,8 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutModule,
     LayoutRoutingModule,
 
-    RegisterModule,
-    RegisterRoutingModule,
+    TasksModule,
+    TasksRoutingModule,
 
     UiModules,
 

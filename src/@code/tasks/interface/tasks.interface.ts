@@ -4,8 +4,8 @@ export interface ITasks {
     category:           ICategory;
     status:             string;
     priority:           string;
-    startDt:            Date;
-    endDt:              Date;
+    start_dt:            Date;
+    end_dt:              Date;
 }
 
 export interface IAssistant {
@@ -23,3 +23,4 @@ export interface IStatus {
 export interface IPriority {
     name: string;
 }
+ 

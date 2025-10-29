@@ -21,17 +21,18 @@
       <div class="create-tasks__register-category">
         <mat-form-field appearance="outline">
           <mat-select formControlName="category" placeholder="Selecione uma categoria">
-            <mat-option *ngFor="let category of assistant?.category" [value]="category">
+            <mat-option *ngFor="let category of assistant?.category" [value]="category.name">
               {{category.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-
         <button matFab (click)="openModal()">
           <span class="material-icons">add</span>
         </button>
       </div>
-
+      <mat-error *ngIf="formGroup.get('category')?.errors && formGroup.get('category')?.touched">
+        <span *ngIf="formGroup.get('category')?.hasError('required')">Campo obrigatório</span>
+      </mat-error>
     </div>
 
     <div class="create-tasks__grid-fields">
@@ -39,7 +40,7 @@
         <mat-label>Prioridade</mat-label>
         <mat-form-field appearance="outline">
           <mat-select formControlName="priority" placeholder="Selecione uma prioridade">
-            <mat-option *ngFor="let priority of assistant?.priority" [value]="priority">
+            <mat-option *ngFor="let priority of assistant?.priority" [value]="priority.name">
               {{priority.name}}
             </mat-option>
           </mat-select>
@@ -50,7 +51,7 @@
         <mat-label>Status</mat-label>
         <mat-form-field appearance="outline">
           <mat-select formControlName="status" placeholder="Selecione um status">
-            <mat-option *ngFor="let status of assistant?.status" [value]="status">
+            <mat-option *ngFor="let status of assistant?.status" [value]="status.name">
               {{status.name}}
             </mat-option>
           </mat-select>
@@ -62,7 +63,7 @@
       <div class="create-tasks__field">
         <mat-label>Início da tarefa</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="startDt" placeholder="Data inicial" [matDatepicker]="startPicker"/>
+          <input matInput formControlName="start_dt" placeholder="Data inicial" [matDatepicker]="startPicker"/>
           <mat-datepicker-toggle matIconSuffix [for]="startPicker"></mat-datepicker-toggle>
           <mat-datepicker #startPicker></mat-datepicker>
         </mat-form-field>
@@ -71,7 +72,7 @@
       <div class="create-tasks__field">
         <mat-label>Prazo final da tarefa</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="endDt" placeholder="Data final" [matDatepicker]="endPicker"/>
+          <input matInput formControlName="end_dt" placeholder="Data final" [matDatepicker]="endPicker"/>
           <mat-datepicker-toggle matIconSuffix [for]="endPicker"></mat-datepicker-toggle>
           <mat-datepicker #endPicker></mat-datepicker>
         </mat-form-field>

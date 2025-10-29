@@ -1,0 +1,35 @@
+@import 'variables';
+
+.code-ui-table {
+    margin: 2rem 0rem;
+    height: 100vh;
+
+    table {
+        width: 100%;
+        border-radius: .5rem;
+        border: 1.8px solid $outline-color;
+        // border-collapse: separate;
+        border-spacing: 0;
+    
+        thead {
+            padding: 1.8rem;
+            
+            th {
+                padding: 1.5rem;
+                text-align: start;
+                border-bottom: 1.8px solid $outline-color;
+            }
+        }
+        
+        tbody tr td {
+            border-bottom: 1.8px solid $outline-color;
+            padding: 1.5rem;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}
+
+

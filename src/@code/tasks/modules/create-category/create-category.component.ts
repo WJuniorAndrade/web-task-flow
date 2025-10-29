@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { TasksPresenter } from '../../../store/tasks-presenter';
+import { TasksPresenter } from '../../store/tasks-presenter';
 
 @Component({
   selector: 'codes-create-category',

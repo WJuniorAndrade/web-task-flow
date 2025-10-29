@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { TasksService } from '../services/tasks-service';
+import { TasksService } from '../../services/tasks-service';
 import { SubSink } from 'subsink';
-import { IAssistant, ICategory, ITasks } from '../interface/tasks.interface';
-import { TasksPresenter } from '../store/tasks-presenter';
+import { IAssistant, ICategory, ITasks } from '../../interface/tasks.interface';
+import { TasksPresenter } from '../../store/tasks-presenter';
 
 @Component({
   selector: 'codes-tasks-container',
-  templateUrl: './tasks.container.html',
-  styleUrls: ['./tasks.container.scss']
+  templateUrl: './form-task.container.html',
+  styleUrls: ['./form-task.container.scss']
 })
-export class TasksContainer implements OnInit {
+export class FormTaskContainer implements OnInit {
 
   private subsink: SubSink = new SubSink();
 
@@ -42,14 +42,17 @@ export class TasksContainer implements OnInit {
 
   serviceSubscription() {
     this.subsink.add(
-      this.getAssistant()
+      this.getAssistant(),
     )
   }
 
   createTasks(data: ITasks): void {
-    console.log({ response: data })
     this.subsink.add(
-  
+      this.service.createTasks(data).subscribe({
+        next:(res: Response) => {
+          
+        },
+      })
     )
   }
 
