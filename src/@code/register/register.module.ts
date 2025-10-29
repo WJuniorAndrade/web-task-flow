@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { UiModules } from '../ui/src/ui-modules';
 import { RegisterRoutingModule } from './register-routing.module';
-import { CreateTasksContainer } from './modules/create-tasks.container';
+import { TasksContainer } from './modules/tasks.container';
 import { CreateTasksComponent } from './modules/view/create-tasks/create-tasks.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TasksService } from './services/tasks-service';
@@ -16,7 +16,7 @@ import { CreateCategoryComponent } from './modules/view/create-category/create-c
 @NgModule({
   declarations: [
     CreateTasksComponent,
-    CreateTasksContainer,
+    TasksContainer,
     CreateCategoryComponent
   ],
 
@@ -30,7 +30,7 @@ import { CreateCategoryComponent } from './modules/view/create-category/create-c
   ],
   exports: [
     CreateTasksComponent,
-    CreateTasksContainer,
+    TasksContainer,
     CreateCategoryComponent
   ],
   providers:[

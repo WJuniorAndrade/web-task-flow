@@ -1,14 +1,25 @@
-export interface Tasks {
+export interface ITasks {
     title:              string;
     description:        string | null | undefined;
-    category:           string;
+    category:           ICategory;
     status:             string;
     priority:           string;
     startDt:            Date;
     endDt:              Date;
 }
 
-export interface Category {
-    id:  number;
-    title: string;
+export interface IAssistant {
+    category: ICategory[];
+    status: IStatus[];
+    priority: IPriority[];
+}
+export interface ICategory {
+    id?:  number;
+    name: string;
+}
+export interface IStatus {
+    name: string;
+}
+export interface IPriority {
+    name: string;
 }

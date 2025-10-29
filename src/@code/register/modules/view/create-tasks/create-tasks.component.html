@@ -8,6 +8,11 @@
       <mat-form-field appearance="outline">
         <input matInput formControlName="title" placeholder="Digite o título">
       </mat-form-field>
+      <mat-error *ngIf="formGroup.get('title')?.errors && formGroup.get('title')?.touched">
+        <span *ngIf="formGroup.get('title')?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="formGroup.get('title')?.hasError('minlength')">O Título deve conter no mínimo 3 caracteres</span>
+        <span *ngIf="formGroup.get('title')?.hasError('maxlength')">O Título deve conter no máximo 60 caracteres</span>
+      </mat-error>
     </div>
 
     <div class="create-tasks__category">
@@ -16,8 +21,8 @@
       <div class="create-tasks__register-category">
         <mat-form-field appearance="outline">
           <mat-select formControlName="category" placeholder="Selecione uma categoria">
-            <mat-option *ngFor="let data of category" [value]="data">
-              {{data.title}}
+            <mat-option *ngFor="let category of assistant?.category" [value]="category">
+              {{category.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -34,8 +39,8 @@
         <mat-label>Prioridade</mat-label>
         <mat-form-field appearance="outline">
           <mat-select formControlName="priority" placeholder="Selecione uma prioridade">
-            <mat-option *ngFor="let data of priority" [value]="data">
-              {{data.title}}
+            <mat-option *ngFor="let priority of assistant?.priority" [value]="priority">
+              {{priority.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -45,8 +50,8 @@
         <mat-label>Status</mat-label>
         <mat-form-field appearance="outline">
           <mat-select formControlName="status" placeholder="Selecione um status">
-            <mat-option *ngFor="let status of status" [value]="status">
-              {{status.title}}
+            <mat-option *ngFor="let status of assistant?.status" [value]="status">
+              {{status.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -77,7 +82,10 @@
       <mat-label>Descrição</mat-label>
       <mat-form-field appearance="outline">
         <input matInput formControlName="description" placeholder="Digite a descrição">
-      </mat-form-field>
+      </mat-form-field><mat-error *ngIf="formGroup.get('title')?.errors && formGroup.get('description')?.touched">
+        <span *ngIf="formGroup.get('description')?.hasError('maxlength')">A Descrição deve conter no máximo 100 caracteres</span>
+      </mat-error>
+
     </div>
 
     <div class="create-tasks__actions">

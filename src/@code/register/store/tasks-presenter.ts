@@ -1,24 +1,33 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { Category, Tasks } from "../interface/tasks.interface";
+import { IAssistant, ICategory, ITasks } from "../interface/tasks.interface";
 
 @Injectable()
 export class TasksPresenter {
     constructor(
     ) { }
 
-    private _createTasks = new Subject<Tasks>();
+    private _createTasks = new Subject<ITasks>();
     public readonly createTasks$ = this._createTasks.asObservable();
 
-    createTasks(data: Tasks) {
+    setTasks(data: ITasks) {
         this._createTasks.next(data);
     }
 
+    private _getTask = new Subject<string>();
+    public readonly getTask$ = this._getTask.asObservable();
 
-    private _createCategory = new Subject<Category>();
+    getTask(id: string) {
+        this._getTask.next(id);
+    }
+    
+
+    
+    private _createCategory = new Subject<ICategory>();
     public readonly createCategory$ = this._createCategory.asObservable();
 
-    createCategory(data: Category) {
+    createCategory(data: ICategory) {
         this._createCategory.next(data);
     }
+
 }

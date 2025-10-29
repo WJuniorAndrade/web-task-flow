@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TasksPresenter } from '../../../store/tasks-presenter';
 
 @Component({
   selector: 'codes-create-category',
@@ -12,8 +13,10 @@ export class CreateCategoryComponent implements OnInit {
   public formGroup: FormGroup = new FormGroup({});
 
   constructor(
+    private presenter: TasksPresenter,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<CreateCategoryComponent>
+
   ) {}
 
 
@@ -23,14 +26,14 @@ export class CreateCategoryComponent implements OnInit {
 
   setFormGroup(): void {
     this.formGroup = this.formBuilder.group({
-      title: ['', Validators.compose([Validators.maxLength(40)])]
+      name: ['', Validators.compose([Validators.maxLength(40)])]
     })
   }
 
   createCategory() {
-    const form = this.formGroup.value
-    if (form.title.length) {
-      this.dialogRef.close(form)
+    if (this.formGroup.valid) {
+      this.presenter.createCategory(this.formGroup.getRawValue());
+      this.dialogRef.close();
     }
   }
 }

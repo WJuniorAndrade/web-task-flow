@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { env } from '../../../../env';
-import { Tasks } from '../interface/tasks.interface';
+import { IAssistant, ICategory, ITasks } from '../interface/tasks.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,22 @@ export class TasksService {
 //     return this.http.post<ApiResponse>(`${this.apiUrl}/tasks/create`);
 //   }
 
-  createTasks(data:Tasks) {
+  createTasks(data: ITasks) {
     return this.http.post<Response>(`${this.apiUrl}/tasks/create`, data)
+  }
+
+  getTask(id:string) {
+    return this.http.get<Response>(`${this.apiUrl}/tasks/${id}`)
+  }
+
+
+  //CATEGORY
+  createCategory(data: ICategory) {
+    return this.http.post<Response>(`${this.apiUrl}/category/create`, data)
+  }
+
+  //
+  getAssistant() {
+    return this.http.get<IAssistant>(`${this.apiUrl}/tasks/assistant`);
   }
 }
